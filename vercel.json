@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "npm run start:prod",
+            "use": "@nestjs/now-builder",
+            "config": {
+                "distDir": "dist"
+            }
+        }
+    ]
+}
