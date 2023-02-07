@@ -1,8 +1,8 @@
 import { Controller, UploadedFiles } from '@nestjs/common';
-import { Body, Get, Param, Post, Put, Res } from '@nestjs/common/decorators';
+import { Body, Delete, Get, Param, Post, Put, Res } from '@nestjs/common/decorators';
 import { UseInterceptors } from '@nestjs/common/decorators/core/use-interceptors.decorator';
 import { FilesInterceptor } from '@nestjs/platform-express/multer';
-import { join } from 'path';
+import { join, parse } from 'path';
 import { Observable, of } from 'rxjs';
 import { UserDto } from 'src/user/UserDto';
 import { multerOptions } from './config';
@@ -37,6 +37,13 @@ export class UploadController {
   async updateName(@Param('id') id, @Body() data: ImagemDto) {
     const numberValue = parseFloat(id);
     return this.uploadService.updateImage(numberValue, data);
+  }
+
+
+  @Delete(':id')
+  async delete(@Param('id') id: string, @Body() body) {
+    const numberValue = parseFloat(id);
+    return this.uploadService.removerFoto(numberValue);
   }
 
 
