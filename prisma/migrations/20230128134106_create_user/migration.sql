@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE `User` (
+CREATE TABLE `user` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `idCliente` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
