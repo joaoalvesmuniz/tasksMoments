@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE `imagemAvatar` (
+CREATE TABLE `imagemavatar` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `Avatar` VARCHAR(191) NOT NULL,
 

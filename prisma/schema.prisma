@@ -18,6 +18,8 @@ model User {
   name      String
   lastName  String
   Avatar    String?
+
+  @@map("user")
 }
 
 model Imagens {
