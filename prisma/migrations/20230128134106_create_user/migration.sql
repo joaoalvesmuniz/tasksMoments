@@ -4,6 +4,7 @@ CREATE TABLE `user` (
     `idCliente` VARCHAR(191) NOT NULL,
     `email` VARCHAR(191) NOT NULL,
     `name` VARCHAR(191) NOT NULL,
+    `senha`VARCHAR(191) NOT NULL,
     `lastName` VARCHAR(191) NOT NULL,
 
     UNIQUE INDEX `User_idCliente_key`(`idCliente`),
