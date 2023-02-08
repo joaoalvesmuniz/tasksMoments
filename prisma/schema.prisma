@@ -18,6 +18,7 @@ model User {
   name      String
   lastName  String
   Avatar    String?
+  Admin     String?
 
   @@map("user")
 }

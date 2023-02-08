@@ -11,16 +11,25 @@ export class UserService {
 
         const user = await this.prisma.user.findFirst({ where: { email: data.email } })
 
-        if (user) {
+        if (user.Admin == "1") {
 
-            throw new Error('There is already an email registered with this data!.')
+
+
+            if (user) {
+
+                throw new Error('There is already an email registered with this data!.')
+            }
+
+            const createUser = await this.prisma.user.create({
+                data,
+            })
+
+            return createUser;
+        } else {
+
+            throw new Error('Você não tem permissão de acessar essa pagina')
         }
 
-        const createUser = await this.prisma.user.create({
-            data,
-        })
-
-        return createUser;
     }
 
 
@@ -28,6 +37,7 @@ export class UserService {
 
 
         const user = await this.prisma.user.findFirst({ where: { email: data.email, senha: data.senha } })
+
 
 
         if (!user) {
