@@ -11,8 +11,7 @@ export class UserService {
 
         const user = await this.prisma.user.findFirst({ where: { email: data.email } })
 
-        if (user.Admin == "1") {
-
+        if (user.Admin === "1") {
 
 
             if (user) {
